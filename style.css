@@ -1,0 +1,34 @@
+body {
+	background: #F4F4F6;
+}
+
+.box {
+	position: relative;
+	display: inline-block;
+	margin: 1in;
+	width: 100px; height: 100px;
+	border-radius: 5px;
+	background-color: #fff;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+	transition: all 0.3s ease-in-out;
+}
+
+.box::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: opacity 0.3s ease-in-out;
+}
+
+.box:hover {
+  transform: scale(1.2, 1.2);
+}
+
+.box:hover::after {
+  opacity: 1;
+}
